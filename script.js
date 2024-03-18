@@ -56,7 +56,17 @@ function selectColor(){
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+    let grid = document.getElementById("grid");
+    let trAll = grid.querySelectorAll("tr");
+    for(let i=0; i<numRows; i++) {
+        let tdAll = trAll[i].querySelectorAll("td");
+        for(let j=0; j<numCols; j++) {
+            if(!(tdAll[j].style.backgroundColor)){
+                tdAll[j].style.backgroundColor = colorSelected;
+            }
+        }
+    }
+
 }
 
 // Fill all cells
