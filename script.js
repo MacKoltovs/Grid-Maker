@@ -83,5 +83,11 @@ function fillAll(){
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    let trAll = grid.querySelectorAll("tr");
+    for(let i=0; i<numRows; i++) {
+        let tdAll = trAll[i].querySelectorAll("td");
+        for(let j=0; j<numCols; j++) {
+            tdAll[j].style.backgroundColor = "";
+        }
+    }
 }
