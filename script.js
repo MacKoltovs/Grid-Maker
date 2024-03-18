@@ -34,7 +34,12 @@ function removeR() {
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    let grid = document.getElementById("grid");
+    let trAll = grid.querySelectorAll("tr");
+    for(let i=0; i<numRows; i++) {
+        trAll[i].removeChild(trAll[i].lastElementChild);
+    }
+    numCols--;
 }
 
 // Set global variable for selected color
