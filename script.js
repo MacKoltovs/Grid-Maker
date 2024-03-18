@@ -7,16 +7,22 @@ let colorSelected;
 function addR() {
     let tr = document.createElement("tr");
     for(let i=0; i<numCols; i++) {
-        tr.appendChild(document.createElement("td"));
+        let td = document.createElement("td");
+        tr.appendChild(td);
     }
     document.getElementById("grid").appendChild(tr);
     numRows++;
-    console.log(numRows);
 }
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    let grid = document.getElementById("grid")
+    let trAll = grid.querySelectorAll("tr");
+    for(let i=0; i<numRows; i++) {
+        let td = document.createElement("td");
+        trAll[i].appendChild(td);
+    }
+    numCols++;
 }
 
 // Remove a row
