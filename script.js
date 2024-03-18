@@ -16,7 +16,7 @@ function addR() {
 
 // Add a column
 function addC() {
-    let grid = document.getElementById("grid")
+    let grid = document.getElementById("grid");
     let trAll = grid.querySelectorAll("tr");
     for(let i=0; i<numRows; i++) {
         let td = document.createElement("td");
@@ -27,7 +27,9 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    let grid = document.getElementById("grid");
+    grid.removeChild(grid.lastElementChild);
+    numRows--;  
 }
 
 // Remove a column
