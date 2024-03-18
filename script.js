@@ -8,6 +8,9 @@ function addR() {
     let tr = document.createElement("tr");
     for(let i=0; i<numCols; i++) {
         let td = document.createElement("td");
+        td.onclick = function() {
+            this.style.backgroundColor = colorSelected;
+        }
         tr.appendChild(td);
     }
     document.getElementById("grid").appendChild(tr);
@@ -20,6 +23,9 @@ function addC() {
     let trAll = grid.querySelectorAll("tr");
     for(let i=0; i<numRows; i++) {
         let td = document.createElement("td");
+        td.onclick = function() {
+            this.style.backgroundColor = colorSelected;
+        }
         trAll[i].appendChild(td);
     }
     numCols++;
